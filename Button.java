@@ -56,6 +56,7 @@ public class Button extends Actor
         if(Greenfoot.mouseClicked(this) && !narration.isPlaying())
         {
             narration.play();
+            getWorld().removeObject(this);
         }
     }
 }
