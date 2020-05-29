@@ -11,8 +11,8 @@ public class EngineerButton extends Actor
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private String prefix;
-    private GreenfootSound engineer;
-    private boolean moveOn = false;
+    public GreenfootSound engineer;
+    private boolean next = false;
     private GreenfootSound drones;
     
     public EngineerButton()
@@ -47,22 +47,20 @@ public class EngineerButton extends Actor
         setImage(image);
     }
     
-    /**
-     * Act - do whatever the EngineerButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    public void act()
     {
         if(Greenfoot.mouseClicked(this) && !engineer.isPlaying())
         {
             engineer.play();
-            moveOn = true;
             getWorld().removeObject(this);
         }
-        
-        if(!engineer.isPlaying() && moveOn == true)
+        Actor soldierButton = null;
+        soldierButton = (Actor) getWorld().getObjects(SoldierButton.class).get(0);
+        Actor undecidedButton = null;
+        soldierButton = (Actor) getWorld().getObjects(UndecidedButton.class).get(0);
+        if (Greenfoot.mouseClicked(soldierButton) || Greenfoot.mouseClicked(undecidedButton))
         {
-            drones.play();
+            getWorld().removeObject(this);
         }
-    }    
+    }
 }
