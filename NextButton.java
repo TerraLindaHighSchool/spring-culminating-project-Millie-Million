@@ -13,9 +13,6 @@ public class NextButton extends Actor
     private String prefix;
     private boolean next = false;
     public GreenfootSound drones;
-    public GreenfootSound engineer;
-    public GreenfootSound soldier;
-    public GreenfootSound undecided;
     
     public NextButton()
     {
@@ -28,9 +25,6 @@ public class NextButton extends Actor
         this.prefix = prefix;
         updateImage();
         drones = new GreenfootSound("Opening Scene 2.mp3");
-        engineer = new GreenfootSound("Engineer.mp3");
-        soldier = new GreenfootSound("Soldier.mp3");
-        undecided = new GreenfootSound("undecided.mp3");
     }
     
     /**
@@ -53,16 +47,10 @@ public class NextButton extends Actor
     
     public void act()
     {
-        if (Greenfoot.mouseClicked(this) && engineer.isPlaying() || soldier.isPlaying() || undecided.isPlaying())
-        {
-            engineer.stop();
-            soldier.stop();
-            undecided.stop();
             if (Greenfoot.mouseClicked(this) && !drones.isPlaying())
             {
                 drones.play();
                 getWorld().removeObject(this);
             }
-        }
     }
 }
