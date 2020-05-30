@@ -11,9 +11,6 @@ public class UndecidedButton extends Actor
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private String prefix;
-    public GreenfootSound undecided;
-    private boolean next = false;
-    private GreenfootSound drones;
     
     public UndecidedButton()
     {
@@ -25,8 +22,6 @@ public class UndecidedButton extends Actor
         background = getImage();  // get image from class
         this.prefix = prefix;
         updateImage();
-        undecided = new GreenfootSound("undecided.mp3");
-        drones = new GreenfootSound("Opening Scene 2.mp3");
     }
     
     /**
@@ -49,15 +44,6 @@ public class UndecidedButton extends Actor
     
     public void act()
     {
-        if(Greenfoot.mouseClicked(this) && !undecided.isPlaying())
-        {
-            undecided.play();
-            getWorld().removeObject(this);
-        }
         
-        if (Greenfoot.mouseClicked(EngineerButton.class) || Greenfoot.mouseClicked(SoldierButton.class))
-        {
-            getWorld().removeObject(this);
-        }
     }
 }
