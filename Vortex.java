@@ -12,6 +12,9 @@ public class Vortex extends World
     Color color1 = new Color(87,220,180);
     Color color2 = new Color(69,96,158);
     Color color3 = new Color(216,119,223);
+    private GreenfootSound soldier = new GreenfootSound("Soldier.mp3");
+    private GreenfootSound engineer = new GreenfootSound("Engineer.mp3");
+    private GreenfootSound undecided = new GreenfootSound("undecided.mp3");
 
     /**
      * Constructor for objects of class Vortex.
@@ -68,6 +71,7 @@ public class Vortex extends World
                 stars[i].move();
             }
         }
+        removeButtons();
     }
 
     /**
@@ -79,10 +83,48 @@ public class Vortex extends World
         Echo echo = new Echo();
         addObject(echo,123,210);
         Button button = new Button();
-        addObject(button,84,372);
-        button.setLocation(117,382);
-        button.setLocation(71,376);
-        button.setLocation(103,370);
-        button.setLocation(119,375);
+        addObject(button,111,381);
+        EngineerButton engineerButton = new EngineerButton();
+        addObject(engineerButton,466,95);
+        SoldierButton soldierButton = new SoldierButton();
+        addObject(soldierButton,157,96);
+        UndecidedButton undecidedButton = new UndecidedButton();
+        addObject(undecidedButton,381,286);
+    }
+    
+    public void removeButtons()
+    {
+        Actor engineerButton = null;
+        Actor undecidedButton = null;
+        Actor soldierButton = null;
+        if (!getObjects(EngineerButton.class).isEmpty() && !getObjects(UndecidedButton.class).isEmpty() && !getObjects(SoldierButton.class).isEmpty())
+        {
+            engineerButton = (Actor) getObjects(EngineerButton.class).get(0);
+            undecidedButton = (Actor) getObjects(UndecidedButton.class).get(0);
+            soldierButton = (Actor) getObjects(SoldierButton.class).get(0);
+            if (Greenfoot.mouseClicked(engineerButton))
+            {
+                engineer.play();
+                removeObject(engineerButton);
+                removeObject(soldierButton);
+                removeObject(undecidedButton);
+            }
+            
+            if (Greenfoot.mouseClicked(soldierButton))
+            {
+                soldier.play();
+                removeObject(engineerButton);
+                removeObject(soldierButton);
+                removeObject(undecidedButton);
+            }
+            
+            if (Greenfoot.mouseClicked(undecidedButton))
+            {
+                undecided.play();
+                removeObject(engineerButton);
+                removeObject(soldierButton);
+                removeObject(undecidedButton);
+            }
+        }
     }
 }
