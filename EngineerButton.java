@@ -11,9 +11,6 @@ public class EngineerButton extends Actor
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private String prefix;
-    public GreenfootSound engineer;
-    private boolean next = false;
-    private GreenfootSound drones;
     
     public EngineerButton()
     {
@@ -25,8 +22,6 @@ public class EngineerButton extends Actor
         background = getImage();  // get image from class
         this.prefix = prefix;
         updateImage();
-        engineer = new GreenfootSound("Engineer.mp3");
-        drones = new GreenfootSound("Opening Scene 2.mp3");
     }
     
     /**
@@ -49,18 +44,6 @@ public class EngineerButton extends Actor
     
     public void act()
     {
-        if(Greenfoot.mouseClicked(this) && !engineer.isPlaying())
-        {
-            engineer.play();
-            getWorld().removeObject(this);
-        }
-        Actor soldierButton = null;
-        soldierButton = (Actor) getWorld().getObjects(SoldierButton.class).get(0);
-        Actor undecidedButton = null;
-        soldierButton = (Actor) getWorld().getObjects(UndecidedButton.class).get(0);
-        if (Greenfoot.mouseClicked(soldierButton) || Greenfoot.mouseClicked(undecidedButton))
-        {
-            getWorld().removeObject(this);
-        }
+        
     }
 }
