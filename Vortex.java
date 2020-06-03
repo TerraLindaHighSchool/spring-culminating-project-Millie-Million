@@ -42,7 +42,7 @@ public class Vortex extends World
         for(int i = 0; i < 210; i++)
         {
             Star star;
-            int deltaSpeed = Greenfoot.getRandomNumber(2);
+            int deltaSpeed = Greenfoot.getRandomNumber(20);
 
             if(i < 70)
             {
@@ -77,8 +77,8 @@ public class Vortex extends World
             }
         }
         setTime();
-        removeButtons();
         nextWorld();
+        checkButtonClick();
     }
 
     /**
@@ -93,7 +93,18 @@ public class Vortex extends World
         addObject(button,111,381);
     }
     
-    private void removeButtons()
+    private void setTime()
+    {
+        if (count++ % 60 == 0)
+        {
+            if (time >= 0)
+            {
+                time++;
+            }
+        }
+    }
+    
+    private void checkButtonClick()
     {
         Actor button = null;
         
@@ -106,30 +117,15 @@ public class Vortex extends World
                 narration.play();
                 time = 0;
                 nextWorld = true;
-                removeObject(button);
-            }
-        }
-    }
-    
-    private void setTime()
-    {
-        if (count++ % 60 == 0)
-        {
-            if (time >= 0)
-            {
-                time++;
             }
         }
     }
     
     public void nextWorld()
     {
-        if (nextWorld == true)
+        if (nextWorld == true && !narration.isPlaying())
         {
-            if (time % 12 == 0)
-            {
-                Greenfoot.setWorld(new OpeningScene1());
-            }
+            Greenfoot.setWorld(new OpeningScene1());
         }
     }
 }
