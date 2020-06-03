@@ -11,6 +11,8 @@ public class SoldierButton extends Actor
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private String prefix;
+    private int time = 0;
+    private int count;
     
     public SoldierButton()
     {
@@ -44,6 +46,27 @@ public class SoldierButton extends Actor
     
     public void act()
     {
-        
+        setTime();
+        show();
+    }
+    
+    public void setTime()
+    {
+        if (count++ %60 == 0)
+        {
+            if (time >= 0)
+            {
+                time++;
+            }
+        }
+    }
+    
+     public void show()
+    {
+        getImage().setTransparency(0);
+        if (time >= 74)
+        {
+            getImage().setTransparency(255);
+        }
     }
 }

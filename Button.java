@@ -16,7 +16,6 @@ public class Button extends Actor
     private GreenfootImage background;
     private String prefix;
     private GreenfootSound narration;
-    private boolean next = false;
     
     public Button()
     {
@@ -54,15 +53,9 @@ public class Button extends Actor
     
     public void act()
     {
-        if (next == true && !narration.isPlaying())
-        {
-            Greenfoot.setWorld(new OpeningScene1());
-        }
-        
         if(Greenfoot.mouseClicked(this) && !narration.isPlaying())
         {
             narration.play();
-            next = true;
             getWorld().removeObject(this);
         }
     }
