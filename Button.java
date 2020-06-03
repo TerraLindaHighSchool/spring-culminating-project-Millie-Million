@@ -18,7 +18,6 @@ public class Button extends Actor
     private GreenfootSound narration;
     private int time = 0;
     private int count;
-    private boolean timeStart = false;
     
     public Button()
     {
@@ -53,8 +52,28 @@ public class Button extends Actor
         setImage(image);
     }
     
+    public void setTime()
+    {
+        if (count++ % 60 == 0)
+        {
+            if (time >= 0)
+            {
+                time++;
+            }
+        }
+    }
+    
+    public void hide()
+    {
+        if (Greenfoot.mouseClicked(this))
+        {
+            getWorld().removeObject(this);
+        }
+    }
+    
     public void act()
     {
-        
+        setTime();
+        hide();
     }
 }
