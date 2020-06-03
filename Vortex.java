@@ -12,6 +12,9 @@ public class Vortex extends World
     Color color1 = new Color(87,220,180);
     Color color2 = new Color(69,96,158);
     Color color3 = new Color(216,119,223);
+    
+    private int time = 0;
+    private int count;
 
     /**
      * Constructor for objects of class Vortex.
@@ -68,6 +71,8 @@ public class Vortex extends World
                 stars[i].move();
             }
         }
+        setTime();
+        nextWorld();
     }
 
     /**
@@ -80,5 +85,24 @@ public class Vortex extends World
         addObject(echo,123,210);
         Button button = new Button();
         addObject(button,111,381);
+    }
+    
+    public void setTime()
+    {
+        if (count++ %60 == 0)
+        {
+            if (time >= 0)
+            {
+                time++;
+            }
+        }
+    }
+    
+    public void nextWorld()
+    {
+        if (time % 12 == 0)
+        {
+            Greenfoot.setWorld(new OpeningScene1());
+        }
     }
 }
