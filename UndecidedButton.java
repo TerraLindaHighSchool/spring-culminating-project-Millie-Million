@@ -11,6 +11,8 @@ public class UndecidedButton extends Actor
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private String prefix;
+    private int time = 0;
+    private int count;
     
     public UndecidedButton()
     {
@@ -31,7 +33,6 @@ public class UndecidedButton extends Actor
     {
         GreenfootImage image = new GreenfootImage(background);
         GreenfootImage text = new GreenfootImage(prefix, 22, Color.BLACK, transparent);
-        
         if (text.getWidth() > image.getWidth() - 20)
         {
             image.scale(text.getWidth() + 20, image.getHeight());
@@ -44,6 +45,27 @@ public class UndecidedButton extends Actor
     
     public void act()
     {
-        
+        setTime();
+        show();
+    }
+    
+    public void setTime()
+    {
+        if (count++ %60 == 0)
+        {
+            if (time >= 0)
+            {
+                time++;
+            }
+        }
+    }
+    
+     public void show()
+    {
+        getImage().setTransparency(0);
+        if (time >= 74)
+        {
+            getImage().setTransparency(255);
+        }
     }
 }
