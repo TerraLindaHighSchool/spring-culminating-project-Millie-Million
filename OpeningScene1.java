@@ -80,6 +80,7 @@ public class OpeningScene1 extends World
         Actor engineerButton = null;
         Actor undecidedButton = null;
         Actor soldierButton = null;
+        
         if (!getObjects(EngineerButton.class).isEmpty() && !getObjects(UndecidedButton.class).isEmpty() && !getObjects(SoldierButton.class).isEmpty())
         {
             engineerButton = (Actor) getObjects(EngineerButton.class).get(0);
