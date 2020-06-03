@@ -13,9 +13,12 @@ public class Vortex extends World
     Color color2 = new Color(69,96,158);
     Color color3 = new Color(216,119,223);
     
+    private GreenfootSound narration;
+    private boolean nextWorld = false;
+    
     private int time = 0;
     private int count;
-
+    
     /**
      * Constructor for objects of class Vortex.
      * 
@@ -24,6 +27,8 @@ public class Vortex extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        
+        narration = new GreenfootSound("Beginning.mp3");
 
         GreenfootImage image = getBackground();
         image.setColor(Color.BLACK);
@@ -72,6 +77,7 @@ public class Vortex extends World
             }
         }
         setTime();
+        removeButtons();
         nextWorld();
     }
 
@@ -87,9 +93,27 @@ public class Vortex extends World
         addObject(button,111,381);
     }
     
-    public void setTime()
+    private void removeButtons()
     {
-        if (count++ %60 == 0)
+        Actor button = null;
+        
+        if (!getObjects(Button.class).isEmpty())
+        {
+            button = (Actor) getObjects(Button.class).get(0);
+            
+            if (Greenfoot.mouseClicked(button))
+            {
+                narration.play();
+                time = 0;
+                nextWorld = true;
+                removeObject(button);
+            }
+        }
+    }
+    
+    private void setTime()
+    {
+        if (count++ % 60 == 0)
         {
             if (time >= 0)
             {
@@ -100,9 +124,12 @@ public class Vortex extends World
     
     public void nextWorld()
     {
-        if (time % 12 == 0)
+        if (nextWorld == true)
         {
-            Greenfoot.setWorld(new OpeningScene1());
+            if (time % 12 == 0)
+            {
+                Greenfoot.setWorld(new OpeningScene1());
+            }
         }
     }
 }
