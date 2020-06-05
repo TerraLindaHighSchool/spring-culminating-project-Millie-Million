@@ -13,8 +13,6 @@ public class Echo extends SmoothMover
 {
     private static final int gunReloadTime = 5;         // The minimum delay between firing the gun.
     private int reloadDelayCount;               // How long ago we fired the gun the last time.
-    private boolean gameLose = false;
-    private Boolean gameWin = false;
     
     private GreenfootImage echo = new GreenfootImage("Slipstream.png");
     private GreenfootImage echoWithThrust = new GreenfootImage("EchoThrust.png");
@@ -82,23 +80,14 @@ public class Echo extends SmoothMover
         Drone a = (Drone) getOneIntersectingObject(Drone.class);
         if (a != null)
         {
-            gameLose = true;
-            endGame();
+            endGameLose();
             getWorld().removeObject(this);
         }
     }
     
-    private void endGame()
+    private void endGameLose()
     {
-        if (gameLose = true)
-        {
-            Greenfoot.setWorld(new EndGameLose());
-        }
-        
-        if (gameWin = true)
-        {
-            Greenfoot.setWorld(new EndGameWin());
-        }
+        Greenfoot.setWorld(new EndGameLose());
     }
     
     /**
