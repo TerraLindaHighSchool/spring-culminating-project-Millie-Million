@@ -38,6 +38,10 @@ public class GunRoom extends World
         addObject(noButton,417,23);
         MaybeButton maybeButton = new MaybeButton();
         addObject(maybeButton,300,23);
+        Headset headset = new Headset();
+        addObject(headset, 300, 200);
+        
+        setPaintOrder(YesButton.class, NoButton.class, MaybeButton.class, HeadsetBlast.class, Headset.class);
     }
     
     public void act()
@@ -46,6 +50,7 @@ public class GunRoom extends World
         removeButtons();
         playExplode();
         space();
+        brightColors();
     }
     
     public void setTime()
@@ -67,9 +72,17 @@ public class GunRoom extends World
         }
     }
     
+    public void brightColors()
+    {
+        if (time % 117 == 0)
+        {
+            addObject(new HeadsetBlast(), 300, 200);
+        }
+    }
+    
     public void space()
     {
-        if (time % 123 == 0)
+        if (time % 121 == 0)
         {
             Greenfoot.setWorld(new Space());
         }
