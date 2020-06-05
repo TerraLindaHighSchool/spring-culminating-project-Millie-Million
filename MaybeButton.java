@@ -11,8 +11,9 @@ public class MaybeButton extends Actor
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private String prefix;
-    private boolean next = false;
     public GreenfootSound maybe;
+    private int time = 0;
+    private int count;
     
     public MaybeButton()
     {
@@ -47,10 +48,27 @@ public class MaybeButton extends Actor
     
     public void act()
     {
-            if (Greenfoot.mouseClicked(this) && !maybe.isPlaying())
+        setTime();
+        show();
+    }
+    
+    public void setTime()
+    {
+        if (count++ % 60 == 0)
+        {
+            if (time >= 0)
             {
-                maybe.play();
-                getWorld().removeObject(this);
+                time++;
             }
+        }
+    }
+    
+    public void show()
+    {
+        getImage().setTransparency(0);
+        if (time  >= 31)
+        {
+            getImage().setTransparency(255);
+        }
     }
 }
