@@ -38,6 +38,8 @@ public class OpeningScene extends World
         UndecidedButton undecidedButton = new UndecidedButton();
         addObject(undecidedButton,495,23);
         opening.play();
+        Q q = new Q();
+        addObject(q,305,232);
     }
     
     public void act()
