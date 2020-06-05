@@ -125,7 +125,7 @@ public class Vortex extends World
     {
         if (nextWorld == true && !narration.isPlaying())
         {
-            Greenfoot.setWorld(new OpeningScene1());
+            Greenfoot.setWorld(new OpeningScene());
         }
     }
 }
