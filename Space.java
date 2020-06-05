@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class Space here.
@@ -61,7 +62,11 @@ public class Space extends World
     
     public void act()
     {
-        
+        List drones = getObjects(Drone.class);
+        if (drones.size() == 0)
+        {
+            Greenfoot.setWorld(new GunRoom2());
+        }
     }
     
     private void prepare()
