@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndGameLose here.
+ * You died to crappy drone AIs. Boo hoo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class EndGameLose extends World
 {
-
     /**
-     * Constructor for objects of class EndGameLose.
+     * Constructor for objects of class EndGameLose. Makes the world.
      * 
      */
     public EndGameLose()
@@ -25,8 +24,7 @@ public class EndGameLose extends World
     }
 
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Adds the end game text.
      */
     private void prepare()
     {
