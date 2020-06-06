@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EngineerButton here.
+ * The undecided choice. Not much of a future in education for you, maybe the academy has room for you in their elite squadron of fighter pilots.
+ * Hint hint.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class UndecidedButton extends Actor
 {
@@ -14,11 +15,17 @@ public class UndecidedButton extends Actor
     private int time = 0;
     private int count;
     
+    /**
+     * Put words on it.
+     */
     public UndecidedButton()
     {
         this("I don't know yet...");
     }
-
+    
+    /**
+     * Make a button with specific words on it.
+     */
     public UndecidedButton(String prefix)
     {
         background = getImage();  // get image from class
@@ -43,12 +50,18 @@ public class UndecidedButton extends Actor
         setImage(image);
     }
     
+    /**
+     * Do whatever the undecided button wants to do. Called whenever the act button is pressed.
+     */
     public void act()
     {
         setTime();
         show();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ %60 == 0)
@@ -60,9 +73,13 @@ public class UndecidedButton extends Actor
         }
     }
     
+    /**
+     * Whe the second timer reaches 74, full transparency!
+     */
      public void show()
     {
         getImage().setTransparency(0);
+        
         if (time >= 74)
         {
             getImage().setTransparency(255);
