@@ -27,6 +27,12 @@ public class ClosingScene extends World
     private void prepare()
     {
         goodbye.play();
+        Q2 q2 = new Q2();
+        addObject(q2,305,232);
+        Calix2 calix2 = new Calix2();
+        addObject(calix2,402,224);
+        Zyla2 zyla2 = new Zyla2();
+        addObject(zyla2,478,216);
     }
     
     public void act()
