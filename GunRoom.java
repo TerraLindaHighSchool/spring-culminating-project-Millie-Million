@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class OpeningScene1 here.
+ * Pew pew. You enter the gun room.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class GunRoom extends World
 {
@@ -18,7 +18,7 @@ public class GunRoom extends World
     private int count;
 
     /**
-     * Constructor for objects of class OpeningScene1.
+     * Constructor for objects of class GunRoom. Makes the world.
      * 
      */
     public GunRoom()
@@ -29,6 +29,9 @@ public class GunRoom extends World
         prepare();
     }
     
+    /**
+     * Plays the narrative, adds in invisible buttons, and a headset, sets the paint order.
+     */
     private void prepare()
     {      
         drones2.play();
@@ -44,6 +47,9 @@ public class GunRoom extends World
         setPaintOrder(YesButton.class, NoButton.class, MaybeButton.class, HeadsetBlast.class, Headset.class);
     }
     
+    /**
+     * Does what the world wants to do. Is called everytime the act button is pressed.
+     */
     public void act()
     {
         setTime();
@@ -53,6 +59,9 @@ public class GunRoom extends World
         brightColors();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -64,6 +73,9 @@ public class GunRoom extends World
         }
     }
     
+    /**
+     * Plays Echo's reassuring narrative when teh second timer reaches 110.
+     */
     public void playExplode()
     {
         if (time % 110 == 0)
@@ -72,6 +84,9 @@ public class GunRoom extends World
         }
     }
     
+    /**
+     * Blinds you with a headset flash when the second timer reaches 117.
+     */
     public void brightColors()
     {
         if (time % 117 == 0)
@@ -80,6 +95,9 @@ public class GunRoom extends World
         }
     }
     
+    /**
+     * Switches the world to space when the second timer reaches 121.
+     */
     public void space()
     {
         if (time % 121 == 0)
@@ -88,6 +106,9 @@ public class GunRoom extends World
         }
     }
     
+    /**
+     * Gets rid of the choice buttons when one of them is pressed. Plays the narratio of the selected button.
+     */
     private void removeButtons()
     {
         Actor yesButton = null;
