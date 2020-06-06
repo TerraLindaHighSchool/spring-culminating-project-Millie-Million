@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EngineerButton here.
+ * Maybe I'll svae your lives and destroy those drones. Mayyyybbeee...
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class MaybeButton extends Actor
 {
@@ -15,11 +15,17 @@ public class MaybeButton extends Actor
     private int time = 0;
     private int count;
     
+    /**
+     * Put words on it.
+     */
     public MaybeButton()
     {
         this("Maybe");
     }
-
+    
+    /**
+     * Creat a button with specific words on it.
+     */
     public MaybeButton(String prefix)
     {
         background = getImage();  // get image from class
@@ -46,12 +52,18 @@ public class MaybeButton extends Actor
         setImage(image);
     }
     
+    /**
+     * Do whatever the maybe button wants to do. Called whenever the act button is pressed.
+     */
     public void act()
     {
         setTime();
         show();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -63,6 +75,9 @@ public class MaybeButton extends Actor
         }
     }
     
+    /**
+     * When the second timer gets to 31, full transparency!
+     */
     public void show()
     {
         getImage().setTransparency(0);
