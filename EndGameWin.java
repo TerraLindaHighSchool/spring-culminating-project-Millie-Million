@@ -1,16 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndGameWin here.
+ * Wow! You made it to the end! Next chapter of Nebula coming soon! ;)
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class EndGameWin extends World
 {
-
     /**
-     * Constructor for objects of class EndGameWin.
+     * Constructor for objects of class EndGameWin. Makes the world.
      * 
      */
     public EndGameWin()
@@ -25,8 +24,7 @@ public class EndGameWin extends World
     }
 
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Adds the end game text.
      */
     private void prepare()
     {
