@@ -40,6 +40,10 @@ public class OpeningScene extends World
         opening.play();
         Q q = new Q();
         addObject(q,305,232);
+        Zyla zyla = new Zyla();
+        addObject(zyla,228,218);
+        Calix calix = new Calix();
+        addObject(calix,152,225);
     }
     
     public void act()
