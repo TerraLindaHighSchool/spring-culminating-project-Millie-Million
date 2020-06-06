@@ -3,15 +3,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
 /**
- * Write a description of class OpeningScene1 here.
+ * The first time we see inside the cockpit of the Echo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class OpeningScene extends World
 {
-    public int timeNext = 110;
-    
     private GreenfootSound soldier = new GreenfootSound("Soldier.mp3");
     private GreenfootSound engineer = new GreenfootSound("Engineer.mp3");
     private GreenfootSound undecided = new GreenfootSound("undecided.mp3");
@@ -26,7 +24,7 @@ public class OpeningScene extends World
     private boolean undecidedChoice = false;
 
     /**
-     * Constructor for objects of class OpeningScene1.
+     * Constructor for objects of class OpeningScene1. Makes the world.
      * 
      */
     public OpeningScene()
@@ -37,6 +35,9 @@ public class OpeningScene extends World
         prepare();
     }
     
+    /**
+     * Adds in actors and plays the narration.
+     */
     private void prepare()
     {      
         EngineerButton engineerButton = new EngineerButton();
@@ -54,6 +55,9 @@ public class OpeningScene extends World
         addObject(calix,152,225);
     }
     
+    /**
+     * Does what the world wants to do. Is called everytime the act button is pressed.
+     */
     public void act()
     {
         setTime();
@@ -62,6 +66,9 @@ public class OpeningScene extends World
         gunRoom();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -73,6 +80,9 @@ public class OpeningScene extends World
         }
     }
     
+    /**
+     * When the timer reaches 110 seconds, it plays the drone narration, and animtes the trio accordingly.
+     */
     public void playDrones()
     {
         if (time % 110 == 0)
@@ -100,12 +110,12 @@ public class OpeningScene extends World
                     ((Zyla) zyla).setImage("Zyla1.png");
                 }
                     
-                if (time == 149)
+                if (time == 151)
                 {
                     ((Zyla) zyla).setImage("Zyla4.png");
                 }
                     
-                if (time == 164)
+                if (time == 166)
                 {
                     ((Zyla) zyla).setImage("Zyla1.png");
                 }
@@ -121,22 +131,22 @@ public class OpeningScene extends World
                     ((Q) q).setImage("Q1.png");
                 }
                     
-                if (time == 124)
+                if (time == 126)
                 {
                     ((Q) q).setImage("Q3.png");
                 }
                     
-                if (time == 130)
+                if (time == 132)
                 {
                     ((Q) q).setImage("Q1.png");
                 }
                     
-                if (time == 141)
+                if (time == 143)
                 {
                     ((Q) q).setImage("Q2.png");
                 }
                     
-                if (time == 165)
+                if (time == 167)
                 {
                     ((Q) q).setImage("Q3.png");
                 }
@@ -144,6 +154,9 @@ public class OpeningScene extends World
         }
     }
     
+    /**
+     * When the timer reaches 181 seconds, it switches the world to the gun room.
+     */
     public void gunRoom()
     {
         if (time % 181 == 0)
@@ -152,6 +165,10 @@ public class OpeningScene extends World
         }
     }
     
+    /**
+     * When the 3 button choices appear, when one of them is pressed, it deletes all three, plays the narration for the one that was pressed, 
+     * and animates the trio for the button choice that was pressed.
+     */
     private void firstChoice()
     {
         Actor engineerButton = null;
