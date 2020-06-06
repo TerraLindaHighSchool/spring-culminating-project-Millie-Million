@@ -2,10 +2,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
 /**
- * Write a description of class Space here.
+ * Ah, Space. Where you can get blown up by flying drone ships.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class Space extends World
 {
@@ -15,7 +15,7 @@ public class Space extends World
     Color color3 = new Color(241,226,242);
 
     /**
-     * Constructor for objects of class Space.
+     * Constructor for objects of class Space. Makes the world.
      * 
      */
     public Space()
@@ -30,6 +30,9 @@ public class Space extends World
         prepare();
     }
     
+    /**
+     * Adds tiny little random stars. Twinkle twinkle.
+     */
     private void star()
     {
         for(int i = 0; i < 210; i++)
@@ -60,6 +63,9 @@ public class Space extends World
         }
     }
     
+    /**
+     * Does what the world wants to do. Is called everytime the act button is pressed.
+     */
     public void act()
     {
         List drones = getObjects(Drone.class);
@@ -69,6 +75,9 @@ public class Space extends World
         }
     }
     
+    /**
+     * Adds in the Echo and 3 drone ships. How'd this method get way down here? Nobody knows.
+     */
     private void prepare()
     {
         Echo echo = new Echo();
