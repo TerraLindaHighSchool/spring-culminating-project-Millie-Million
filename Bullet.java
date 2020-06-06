@@ -1,10 +1,10 @@
 import greenfoot.*;
 
 /**
- * A bullet that can hit asteroids.
+ * A blue bullet that can hit drones.
  * 
- * @author Poul Henriksen
- * @author Michael Kölling
+ * @author Millie Harrison
+ * @version 6/5/20
  */
 public class Bullet extends SmoothMover
 {
@@ -33,7 +33,7 @@ public class Bullet extends SmoothMover
     }
     
     /**
-     * The bullet will damage asteroids if it hits them.
+     * The bullet will damage drones if it hits them.
      */
     public void act()
     {
@@ -48,7 +48,7 @@ public class Bullet extends SmoothMover
     }
     
     /**
-     * Check whether we have hit an asteroid.
+     * Check whether we have hit an drone.
      */
     private void checkDroneHit()
     {
