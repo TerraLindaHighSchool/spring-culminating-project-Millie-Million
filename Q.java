@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Q here.
+ * Q(uill Andar): top of her class of Nebula Pilots from the Nova Academy on Mika. Inspired by Han Solo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class Q extends Actor
 {
@@ -17,8 +17,8 @@ public class Q extends Actor
     private GreenfootImage qFront = new GreenfootImage("Q1.png");
     
     /**
-     * Act - do whatever the Q wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Do whatever Q wants to do. This method is called whenever
+     * the act button gets pressed.
      */
     public void act() 
     {
@@ -26,6 +26,9 @@ public class Q extends Actor
         animateScene1();
     } 
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -37,6 +40,9 @@ public class Q extends Actor
         }
     }
     
+    /**
+     * Animates Q for the opening scene.
+     */
     public void animateScene1()
     {
         if ( time == 8)
