@@ -24,7 +24,6 @@ public class Q extends Actor
     {
         setTime();
         animateScene1();
-        firstChoice();
     } 
     
     public void setTime()
@@ -53,35 +52,6 @@ public class Q extends Actor
         if (time == 74)
         {
             setImage(qBack);
-        }
-    }
-    
-    private void firstChoice()
-    {
-        Actor engineerButton = null;
-        Actor undecidedButton = null;
-        Actor soldierButton = null;
-        
-        if (!getWorld().getObjects(EngineerButton.class).isEmpty() && !getWorld().getObjects(UndecidedButton.class).isEmpty() && !getWorld().getObjects(SoldierButton.class).isEmpty())
-        {
-            engineerButton = (Actor) getWorld().getObjects(EngineerButton.class).get(0);
-            undecidedButton = (Actor) getWorld().getObjects(UndecidedButton.class).get(0);
-            soldierButton = (Actor) getWorld().getObjects(SoldierButton.class).get(0);
-            
-            if (Greenfoot.mouseClicked(engineerButton))
-            {
-                time = 90;
-            }
-            
-            if (Greenfoot.mouseClicked(soldierButton))
-            {
-                time = 97;
-            }
-            
-            if (Greenfoot.mouseClicked(undecidedButton))
-            {
-               time = 83;
-            }
         }
     }
 }
