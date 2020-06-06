@@ -1,14 +1,10 @@
 import greenfoot.*;
 
 /**
- * A Counter class that allows you to display a numerical value on screen.
+ * The button to top all buttons, the start button.
  * 
- * The Counter is an actor, so you will need to create it, and then add it to
- * the world in Greenfoot.  If you keep a reference to the Counter then you
- * can adjust its value.
- * 
- * @author Neil Brown and Michael Kölling 
- * @version 1.1
+ * @author Millie Harrison
+ * @version 6/5/20
  */
 public class Button extends Actor
 {
@@ -19,6 +15,9 @@ public class Button extends Actor
     private int time = 0;
     private int count;
     
+    /**
+     * Puts words on the button.
+     */
     public Button()
     {
         this("Click to Begin Adventure");
@@ -52,6 +51,9 @@ public class Button extends Actor
         setImage(image);
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -63,6 +65,9 @@ public class Button extends Actor
         }
     }
     
+    /**
+     * If it's clicked, it's gone.
+     */
     public void hide()
     {
         if (Greenfoot.mouseClicked(this))
@@ -71,6 +76,9 @@ public class Button extends Actor
         }
     }
     
+    /**
+     * Does what the button wants to do. Is called everytime the act button is pressed.
+     */
     public void act()
     {
         setTime();
