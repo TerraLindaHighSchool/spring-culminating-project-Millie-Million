@@ -1,30 +1,30 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class HeadsetBlast here.
+ * Get blinded by light and color.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison
+ * @version 6/5/20
  */
 public class HeadsetBlast extends Actor
 {
-    /** How many images should be used in the animation of the explostion */
+    /** How many images should be used in the animation of the explostion of color*/
     private final static int IMAGE_COUNT= 12;
     
     /** 
-     * The images in the explosion. This is static so the images are not
+     * The images in the explosion of color. This is static so the images are not
      * recreated for every object (improves performance significantly).
      */
     private static GreenfootImage[] images;
     
-    /** Current size of the explosion */
+    /** Current size of the explosion of color*/
     private int imageNo = 0;
     
-    /** How much do we increment the index in the explosion animation. */
+    /** How much do we increment the index in the explosion of color animation. */
     private int increment=1;
     
     /**
-     * Create a new explosion.
+     * Create a new explosion of color.
      */
     public HeadsetBlast() 
     {
@@ -33,7 +33,7 @@ public class HeadsetBlast extends Actor
     }    
     
     /** 
-     * Create the images for explosion.
+     * Create the images for explosion of color.
      */
     public synchronized static void initializeImages() 
     {
