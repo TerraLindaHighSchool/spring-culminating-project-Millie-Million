@@ -1,13 +1,10 @@
 import greenfoot.*;
 
 /**
- * A rocket that can be controlled by the arrowkeys: up, left, right.
- * The gun is fired by hitting the 'space' key. 'z' releases a proton wave.
+ * The one and only.
  * 
- * @author Poul Henriksen
- * @author Michael Kölling
- * 
- * @version 1.1
+ * @author Millie Harrison
+ * @version 6/5/20
  */
 public class Echo extends SmoothMover
 {
@@ -26,7 +23,7 @@ public class Echo extends SmoothMover
     }
 
     /**
-     * Do what a rocket's gotta do. (Which is: mostly flying about, and turning,
+     * Do what the Echo's gotta do. (Which is: mostly flying about, and turning,
      * accelerating and shooting when the right keys are pressed.)
      */
     public void act()
@@ -61,6 +58,9 @@ public class Echo extends SmoothMover
         
     }
     
+    /**
+     * if the booster is activated, move forward and active the bright blue thrusters.
+     */
     private void ignite(boolean boosterOn) 
     {
         if (boosterOn) 
@@ -75,6 +75,9 @@ public class Echo extends SmoothMover
         }
     }
     
+    /**
+     * If you collide with a drone you lose.
+     */
     private void checkCollision()
     {
         Drone a = (Drone) getOneIntersectingObject(Drone.class);
@@ -85,6 +88,9 @@ public class Echo extends SmoothMover
         }
     }
     
+    /**
+     * You lose even more.
+     */
     private void endGameLose()
     {
         Greenfoot.setWorld(new EndGameLose());
