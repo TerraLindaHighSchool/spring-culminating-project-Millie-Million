@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EngineerButton here.
+ * The soldier choice. An edcuation path that is really a war path. Hey, those hologuns are dangerous!
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class SoldierButton extends Actor
 {
@@ -14,11 +14,17 @@ public class SoldierButton extends Actor
     private int time = 0;
     private int count;
     
+    /**
+     * Puts words on it.
+     */
     public SoldierButton()
     {
         this("To become a soldier");
     }
-
+    
+    /**
+     * Makes a button with specific words on it.
+     */
     public SoldierButton(String prefix)
     {
         background = getImage();  // get image from class
@@ -44,12 +50,18 @@ public class SoldierButton extends Actor
         setImage(image);
     }
     
+    /**
+     * Do whatever the soldier button wants to do. Called whenever the act button is pressed.
+     */
     public void act()
     {
         setTime();
         show();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ %60 == 0)
@@ -61,9 +73,13 @@ public class SoldierButton extends Actor
         }
     }
     
-     public void show()
+    /**
+     * When the second tiemr reaches 74, full transparency!
+     */
+    public void show()
     {
         getImage().setTransparency(0);
+        
         if (time >= 74)
         {
             getImage().setTransparency(255);
