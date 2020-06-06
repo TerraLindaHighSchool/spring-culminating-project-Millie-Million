@@ -27,6 +27,10 @@ public class GunRoom2 extends World
     private void prepare()
     {
         winScenario.play();
+        Calix2 calix2 = new Calix2();
+        addObject(calix2,254,224);
+        Zyla2 zyla2 = new Zyla2();
+        addObject(zyla2,331,215);
     }
     
     public void act()
