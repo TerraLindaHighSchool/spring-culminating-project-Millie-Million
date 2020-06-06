@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Q2 here.
+ * Q2: the electric boogaloo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class Q2 extends Actor
 {
@@ -17,8 +17,8 @@ public class Q2 extends Actor
     private GreenfootImage qFront = new GreenfootImage("Q1.png");
     
     /**
-     * Act - do whatever the Q2 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Do whatever Q2 wants to do. This method is called whenever
+     * the act button gets pressed.
      */
     public void act() 
     {
@@ -26,6 +26,9 @@ public class Q2 extends Actor
         end();
     }    
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -37,6 +40,9 @@ public class Q2 extends Actor
         }
     }
     
+    /**
+     * Q turns to the controls and flips the vortex drive lever as the second counter hits 18.
+     */
     public void end()
     {
         if (time == 18)
