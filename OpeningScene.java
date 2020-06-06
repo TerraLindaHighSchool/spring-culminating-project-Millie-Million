@@ -16,6 +16,10 @@ public class OpeningScene extends World
     
     private int time = 0;
     private int count;
+    
+    private boolean engineerChoice = false;
+    private boolean soldierChoice = false;
+    private boolean undecidedChoice = false;
 
     /**
      * Constructor for objects of class OpeningScene1.
@@ -49,7 +53,7 @@ public class OpeningScene extends World
     public void act()
     {
         setTime();
-        removeButtons();
+        firstChoice();
         playDrones();
         gunRoom();
     }
@@ -73,6 +77,16 @@ public class OpeningScene extends World
         }
     }
     
+    public void addDrones()
+    {
+        if (time % 130 == 0)
+        {
+            addObject(new Drone(), 300, 200);
+            addObject(new Drone(), 300, 200);
+            addObject(new Drone(), 300, 200);
+        }
+    }
+    
     public void gunRoom()
     {
         if (time % 181 == 0)
@@ -81,7 +95,7 @@ public class OpeningScene extends World
         }
     }
     
-    private void removeButtons()
+    private void firstChoice()
     {
         Actor engineerButton = null;
         Actor undecidedButton = null;
@@ -97,6 +111,7 @@ public class OpeningScene extends World
             {
                 engineer.play();
                 time = 90;
+                engineerChoice = true;
                 removeObject(engineerButton);
                 removeObject(soldierButton);
                 removeObject(undecidedButton);
@@ -106,6 +121,7 @@ public class OpeningScene extends World
             {
                 soldier.play();
                 time = 97;
+                soldierChoice = true;
                 removeObject(engineerButton);
                 removeObject(soldierButton);
                 removeObject(undecidedButton);
@@ -115,9 +131,68 @@ public class OpeningScene extends World
             {
                 undecided.play();
                 time = 83;
+                undecidedChoice = true;
                 removeObject(engineerButton);
                 removeObject(soldierButton);
                 removeObject(undecidedButton);
+            }
+            
+            if (!getObjects(Zyla.class).isEmpty())
+            {
+                for (Object zyla : getObjects(Zyla.class))
+                {
+                    if (time == 102 && engineerChoice == true)
+                    {
+                        ((Zyla) zyla).setImage("Zyla1.png");
+                    }
+                    
+                    if (time == 103 && undecidedChoice == true)
+                    {
+                        ((Zyla) zyla).setImage("Zyla4.png");
+                    }
+                }
+            }
+        }
+        
+        if (!getObjects(Calix.class).isEmpty())
+        {
+            for (Object calix : getObjects(Calix.class))
+            {
+                if (time == 104 && engineerChoice == true)
+                {
+                    ((Calix) calix).setImage("Calix4.png");
+                }
+                        
+                if (time == 106 && engineerChoice == true)
+                {
+                    ((Calix) calix).setImage("Calix3.png");
+                }
+                        
+                if (time == 98 && undecidedChoice == true)
+                {
+                    ((Calix) calix).setImage("Calix4.png");
+                }
+                        
+                if (time == 107 && soldierChoice == true)
+                {
+                    ((Calix) calix).setImage("Calix1.png");
+                } 
+            }
+        }
+            
+        if (!getObjects(Zyla.class).isEmpty())
+        {
+            for (Object zyla : getObjects(Zyla.class))
+            {
+                if (time == 102 && engineerChoice == true)
+                {
+                    ((Zyla) zyla).setImage("Zyla1.png");
+                }
+                    
+                if (time == 105 && undecidedChoice == true)
+                {
+                    ((Zyla) zyla).setImage("Zyla4.png");
+                }
             }
         }
     }
