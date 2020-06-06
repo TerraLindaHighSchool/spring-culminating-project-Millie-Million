@@ -1,17 +1,17 @@
 import greenfoot.*;
 
 /**
- * A rock in space.
+ * A menacing red and grey drone in space.
  * 
- * @author Poul Henriksen
- * @author Michael Kölling
+ * @author Millie Harrison
+ * @version 6/5/20
  */
 public class Drone extends SmoothMover
 {
     /** Size of this drone */
     private int size;
 
-    /** When the stability reaches 0 the asteroid will explode */
+    /** When the stability reaches 0 the drone will explode */
     private int stability;
 
 
@@ -41,11 +41,14 @@ public class Drone extends SmoothMover
         setSize(size);
     }
     
+    /**
+     * Do what the drone wants to do. Called whenever the act button is pressed.
+     */
     public void act()
     {         
         move();
     }
-
+    
     /**
      * Set the size of this drone. Note that stability is directly
      * related to size. Smaller drones are less stable.
@@ -59,7 +62,7 @@ public class Drone extends SmoothMover
     }
 
     /**
-     * Return the current stability of this asteroid. (If it goes down to 
+     * Return the current stability of this drone. (If it goes down to 
      * zero, it breaks up.)
      */
     public int getStability() 
