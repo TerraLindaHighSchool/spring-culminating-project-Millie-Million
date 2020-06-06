@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Calix here.
+ * Calix Eno: the engineer genius. Based off of Akira.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class Calix extends Actor
 {
@@ -17,8 +17,7 @@ public class Calix extends Actor
     private GreenfootImage calixFront = new GreenfootImage("Calix1.png");
     
     /**
-     * Act - do whatever the Calix wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Do whatever Calix wants to do. Called whenever the act button is pressed.
      */
     public void act() 
     {
@@ -26,6 +25,9 @@ public class Calix extends Actor
         animateScene1();
     }    
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -37,6 +39,9 @@ public class Calix extends Actor
         }
     }
     
+    /**
+     * Animates Calix's movements before the choice in the opening scene.
+     */
     public void animateScene1()
     {
         if (time == 21)
