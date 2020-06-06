@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Zyla here.
+ * Zyla Raylan: femme fatale with a sense of humor, and an excellent sniper.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class Zyla extends Actor
 {
@@ -17,8 +17,8 @@ public class Zyla extends Actor
     private GreenfootImage zylaFront = new GreenfootImage("Zyla1.png");
     
     /**
-     * Act - do whatever the Zyla wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Do whatever Zyla wants to do. Called whenever
+     * the act button gets pressed.
      */
     public void act() 
     {
@@ -26,6 +26,9 @@ public class Zyla extends Actor
         animateScene1();
     }  
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -37,6 +40,9 @@ public class Zyla extends Actor
         }
     }
     
+    /**
+     * Animates Zyla for the opening scene.
+     */
     public void animateScene1()
     {
         if (time == 15)
