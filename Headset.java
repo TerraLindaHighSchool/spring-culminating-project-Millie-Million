@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Headset here.
+ * Blackness. Complete darkness. Oh wait, you're just wearing a bad had.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class Headset extends Actor
 {
@@ -12,8 +12,8 @@ public class Headset extends Actor
     private int count;
     
     /**
-     * Act - do whatever the Headset wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Do whatever the Headset wants to do. This method is called whenever
+     * the act button gets pressed.
      */
     public void act() 
     {
@@ -21,6 +21,9 @@ public class Headset extends Actor
         show();
     }   
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -32,9 +35,13 @@ public class Headset extends Actor
         }
     }
     
+    /**
+     * Whent the second timer gets to 18, full transparency!
+     */
     public void show()
     {
         getImage().setTransparency(0);
+        
         if (time  >= 18)
         {
             getImage().setTransparency(255);
