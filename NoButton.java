@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EngineerButton here.
+ * No, we're all going to die. Just kidding, this sentient robot ship is forcing me to destroy its competition.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class NoButton extends Actor
 {
@@ -15,11 +15,17 @@ public class NoButton extends Actor
     private int time = 0;
     private int count;
     
+    /**
+     * Puts words on it.
+     */
     public NoButton()
     {
         this("No");
     }
-
+    
+    /**
+     * Creates a button with specific words on it.
+     */
     public NoButton(String prefix)
     {
         background = getImage();  // get image from class
@@ -46,12 +52,18 @@ public class NoButton extends Actor
         setImage(image);
     }
     
+    /**
+     * Do whatever the no button wants to do. Called whenever the act button is pressed.
+     */
     public void act()
     {
         setTime();
         show();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -63,9 +75,13 @@ public class NoButton extends Actor
         }
     }
     
+    /**
+     * When the second timer reaches 31, full transparency!
+     */
     public void show()
     {
         getImage().setTransparency(0);
+        
         if (time  >= 31)
         {
             getImage().setTransparency(255);
