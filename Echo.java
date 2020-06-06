@@ -65,7 +65,7 @@ public class Echo extends SmoothMover
     {
         if (boosterOn) 
         {
-            setImage (echoWithThrust);
+            setImage(echoWithThrust);
             addToVelocity(new Vector(getRotation(), 0.5));
             move();
         }
