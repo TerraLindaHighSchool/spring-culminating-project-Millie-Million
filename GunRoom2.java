@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GunRoom2 here.
+ * You survived! Calix and Zyla, your new friends, welcome you back!
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class GunRoom2 extends World
 {
@@ -13,7 +13,7 @@ public class GunRoom2 extends World
     private GreenfootSound winScenario = new GreenfootSound("Win scenario.mp3");
 
     /**
-     * Constructor for objects of class GunRoom2.
+     * Constructor for objects of class GunRoom2. Makes the world.
      * 
      */
     public GunRoom2()
@@ -24,6 +24,9 @@ public class GunRoom2 extends World
         prepare();
     }
     
+    /**
+     * Plays the narration and adds in Calix and Zyla.
+     */
     private void prepare()
     {
         winScenario.play();
@@ -33,12 +36,18 @@ public class GunRoom2 extends World
         addObject(zyla2,331,215);
     }
     
+    /**
+     * Does what the world wants to do. Is called everytime the act button is pressed.
+     */
     public void act()
     {
         setTime();
         cockpit();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -50,6 +59,9 @@ public class GunRoom2 extends World
         }
     }
     
+    /**
+     * When the second timer reaches 37 it switches the world to closing scene.
+     */
     public void cockpit()
     {
         if (time % 37 == 0)
