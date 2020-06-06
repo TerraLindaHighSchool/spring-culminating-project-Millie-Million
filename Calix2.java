@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Calix2 here.
+ * Calix2: the electric boogaloo.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class Calix2 extends Actor
 {
@@ -17,11 +17,10 @@ public class Calix2 extends Actor
     private GreenfootImage calixFront = new GreenfootImage("Calix1.png");
     
     /**
-     * Act - do whatever the Calix2 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Do whatever Calix2 wants to do. Called whenever the act button is pressed.
      */
     public void act() 
     {
-        
+        //trolololololol
     }
 }
