@@ -1,4 +1,6 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class OpeningScene1 here.
@@ -8,6 +10,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class OpeningScene extends World
 {
+    public int timeNext = 110;
+    
     private GreenfootSound soldier = new GreenfootSound("Soldier.mp3");
     private GreenfootSound engineer = new GreenfootSound("Engineer.mp3");
     private GreenfootSound undecided = new GreenfootSound("undecided.mp3");
@@ -75,15 +79,68 @@ public class OpeningScene extends World
         {
             drones.play();
         }
-    }
-    
-    public void addDrones()
-    {
-        if (time % 130 == 0)
+        
+        if (!getObjects(Calix.class).isEmpty())
         {
-            addObject(new Drone(), 300, 200);
-            addObject(new Drone(), 300, 200);
-            addObject(new Drone(), 300, 200);
+            for (Object calix : getObjects(Calix.class))
+            {
+                if (time == 110)
+                {
+                    ((Calix) calix).setImage("Calix1.png");
+                }
+            }
+        }
+            
+        if (!getObjects(Zyla.class).isEmpty())
+        {
+            for (Object zyla : getObjects(Zyla.class))
+            {
+                if (time == 110)
+                {
+                    ((Zyla) zyla).setImage("Zyla1.png");
+                }
+                    
+                if (time == 149)
+                {
+                    ((Zyla) zyla).setImage("Zyla4.png");
+                }
+                    
+                if (time == 164)
+                {
+                    ((Zyla) zyla).setImage("Zyla1.png");
+                }
+            }
+        }
+        
+        if (!getObjects(Q.class).isEmpty())
+        {
+            for (Object q : getObjects(Q.class))
+            {
+                if (time == 110)
+                {
+                    ((Q) q).setImage("Q1.png");
+                }
+                    
+                if (time == 124)
+                {
+                    ((Q) q).setImage("Q3.png");
+                }
+                    
+                if (time == 130)
+                {
+                    ((Q) q).setImage("Q1.png");
+                }
+                    
+                if (time == 141)
+                {
+                    ((Q) q).setImage("Q2.png");
+                }
+                    
+                if (time == 165)
+                {
+                    ((Q) q).setImage("Q3.png");
+                }
+            }
         }
     }
     
@@ -135,22 +192,6 @@ public class OpeningScene extends World
                 removeObject(engineerButton);
                 removeObject(soldierButton);
                 removeObject(undecidedButton);
-            }
-            
-            if (!getObjects(Zyla.class).isEmpty())
-            {
-                for (Object zyla : getObjects(Zyla.class))
-                {
-                    if (time == 102 && engineerChoice == true)
-                    {
-                        ((Zyla) zyla).setImage("Zyla1.png");
-                    }
-                    
-                    if (time == 103 && undecidedChoice == true)
-                    {
-                        ((Zyla) zyla).setImage("Zyla4.png");
-                    }
-                }
             }
         }
         
