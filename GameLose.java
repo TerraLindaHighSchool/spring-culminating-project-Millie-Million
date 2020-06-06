@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameLose here.
+ * BOO HOO! Suck it up and try again, those drones aren't that hard to destroy!
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class GameLose extends Actor
 {
     /**
-     * Act - do whatever the GameLose wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Do whatever the GameLose wants to do. TCalled whenever
+     * the act button gets pressed.
      */
     public void act() 
     {
-        // Add your action code here.
+        // trolololololol
     }    
 }
