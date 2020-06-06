@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EngineerButton here.
+ * Yes, let's blow up your competition Echo!
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Millie Harrison 
+ * @version 6/5/20
  */
 public class YesButton extends Actor
 {
@@ -15,11 +15,17 @@ public class YesButton extends Actor
     private int time = 0;
     private int count;
     
+    /**
+     * Puts words on it.
+     */
     public YesButton()
     {
         this("Yes");
     }
-
+    
+    /**
+     * Makes a button with specific words on it.
+     */
     public YesButton(String prefix)
     {
         background = getImage();  // get image from class
@@ -46,12 +52,18 @@ public class YesButton extends Actor
         setImage(image);
     }
     
+    /**
+     * Do whatever the yes button wants to do. Called whenever the act button is pressed.
+     */
     public void act()
     {
         setTime();
         show();
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     public void setTime()
     {
         if (count++ % 60 == 0)
@@ -63,9 +75,13 @@ public class YesButton extends Actor
         }
     }
     
+    /**
+     * When the second timer reaches 31, full transparency!
+     */
     public void show()
     {
         getImage().setTransparency(0);
+        
         if (time  >= 31)
         {
             getImage().setTransparency(255);
