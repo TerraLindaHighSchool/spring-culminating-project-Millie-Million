@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Instantiates stars and draws them to the world
+ * Mode of intergalacctic travel, very trippy.
  * 
- * @author Bruce Gustin
- * @version 3/15/2020 v1
+ * @author Millie Harrison
+ * @version 6/5/20
  */
 public class Vortex extends World
 {
@@ -20,7 +20,7 @@ public class Vortex extends World
     private int count;
     
     /**
-     * Constructor for objects of class Vortex.
+     * Constructor for objects of class Vortex. Makes the world.
      * 
      */
     public Vortex()
@@ -36,7 +36,10 @@ public class Vortex extends World
         star();
         prepare();
     }
-
+    
+    /**
+     * Adds in all the colorful flashes of light. NO, they are not stars, they are vortex points.
+     */
     private void star()
     {
         for(int i = 0; i < 210; i++)
@@ -66,7 +69,10 @@ public class Vortex extends World
             }
         }
     }
-
+    
+    /**
+     * Does what the world wants to do. Is called everytime the act button is pressed.
+     */
     public void act()
     {
         for(int i = 0; i < 210; i++)
@@ -82,8 +88,7 @@ public class Vortex extends World
     }
 
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Adds in the echo, and the start button.
      */
     private void prepare()
     {
@@ -93,6 +98,9 @@ public class Vortex extends World
         addObject(button,111,381);
     }
     
+    /**
+     * Sets the second timer. Very important for helping with the continuity of the voiceover.
+     */
     private void setTime()
     {
         if (count++ % 60 == 0)
@@ -104,6 +112,9 @@ public class Vortex extends World
         }
     }
     
+    /**
+     * Checks if the start button has been pressed.
+     */
     private void checkButtonClick()
     {
         Actor button = null;
@@ -121,6 +132,9 @@ public class Vortex extends World
         }
     }
     
+    /**
+     * If the button has been pushed and the narration is over, swutch the world to the opening scene.
+     */
     public void nextWorld()
     {
         if (nextWorld == true && !narration.isPlaying())
