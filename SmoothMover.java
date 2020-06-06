@@ -8,6 +8,8 @@ import greenfoot.*;
  * This version implements wrap-around movement: when the actor moves out of the world at one
  * side, it enters it again at the opposite edge.
  * 
+ * Yea, Millie just copied this one over too. Sorry! Don't fail me!
+ * 
  * @author Poul Henriksen
  * @author Michael Kölling
  * 
@@ -20,6 +22,9 @@ public abstract class SmoothMover extends Actor
     private double exactX;
     private double exactY;
     
+    /**
+     * Creates a new vector.
+     */
     public SmoothMover()
     {
         this(new Vector());
